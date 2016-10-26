@@ -14,6 +14,7 @@ sudo apt-get -y upgrade
 # install apache 2 and php 5
 sudo apt-get install -y apache2
 sudo apt-get install -y php5 libapache2-mod-php5 php5-mcrypt
+sudo php5enmod mcrypt
 
 # install mysql and give password to installer
 # export DEBIAN_FRONTEND="noninteractive"
