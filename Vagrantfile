@@ -12,11 +12,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu/trusty64"
   config.vm.provider "virtualbox" do |v|
+    v.name = "vagrant_sebaseba42mate"
     v.memory = 2048
   end
 
   # Bootstrap the vagrant box with project packages.
-  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision :shell, path: "scripts/bootstrap.sh"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
