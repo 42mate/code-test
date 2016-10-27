@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # Use single quotes instead of double quotes to make it work with special-character passwords
-PASSWORD='12345678'
-PROJECTFOLDER='blogmate'
+DEPLOY_PASSWORD="$SEBASEBA_DEPLOY_PASSWORD"
+DEPLOY_PROJECT_NAME="blogmate"
 
 # create project folder
 echo "Crear directorio raíz del proyecto"
-sudo mkdir -p "/var/www/html/${PROJECTFOLDER}"
+sudo mkdir -p "/var/www/html/${DEPLOY_PROJECT_NAME}"
 
 # update / upgrade
 sudo apt-get update
@@ -23,8 +23,8 @@ sudo php5enmod mcrypt
 # install mysql and give password to installer
 # export DEBIAN_FRONTEND="noninteractive"
 echo "Configurar credenciales de MySQL Server"
-sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $PASSWORD"
-sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $PASSWORD"
+sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $DEPLOY_PASSWORD"
+sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $DEPLOY_PASSWORD"
 echo "Instalar MySQL Server"
 sudo apt-get install -y mysql-server
 sudo apt-get install -y php5-mysql
@@ -32,9 +32,9 @@ sudo apt-get install -y php5-mysql
 # install phpmyadmin and give password(s) to installer
 echo "Configurar credenciales de PHPMyAdmin"
 sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/dbconfig-install boolean true"
-sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/app-password-confirm password $PASSWORD"
-sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/admin-pass password $PASSWORD"
-sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/app-pass password $PASSWORD"
+sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/app-password-confirm password $DEPLOY_PASSWORD"
+sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/admin-pass password $DEPLOY_PASSWORD"
+sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/app-pass password $DEPLOY_PASSWORD"
 sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2"
 echo "Instalar PHPMyAdmin"
 sudo apt-get -y install phpmyadmin
@@ -43,8 +43,8 @@ echo "Crear archivo vhost para el proyecto"
 # setup hosts file
 VHOST=$(cat <<EOF
 <VirtualHost *:80>
-    DocumentRoot "/var/www/html/${PROJECTFOLDER}/web"
-    <Directory "/var/www/html/${PROJECTFOLDER}/web">
+    DocumentRoot "/var/www/html/${DEPLOY_PROJECT_NAME}/web"
+    <Directory "/var/www/html/${DEPLOY_PROJECT_NAME}/web">
         AllowOverride All
         Require all granted
     </Directory>
