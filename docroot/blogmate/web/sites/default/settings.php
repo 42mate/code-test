@@ -764,3 +764,7 @@ $databases['default']['default'] = array (
 );
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = 'sites/default/files/config_jlk4WihQpGKOJivIDj1eUauw849QbBz9st0oztogsBZ0WzwwSrcuPnfT2e9IEclbpBhHijh3vw/sync';
+$settings['trusted_host_patterns'] = array(
+  '^sebaseba\.42mate\.com$',
+  '^192.168.33.10$',
+);
