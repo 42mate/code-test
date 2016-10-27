@@ -43,8 +43,8 @@ echo "Crear archivo vhost para el proyecto"
 # setup hosts file
 VHOST=$(cat <<EOF
 <VirtualHost *:80>
-    DocumentRoot "/var/www/html/${PROJECTFOLDER}"
-    <Directory "/var/www/html/${PROJECTFOLDER}">
+    DocumentRoot "/var/www/html/${PROJECTFOLDER}/web"
+    <Directory "/var/www/html/${PROJECTFOLDER}/web">
         AllowOverride All
         Require all granted
     </Directory>
