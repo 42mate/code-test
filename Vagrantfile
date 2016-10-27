@@ -26,6 +26,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
+  
+  # TODO: ¡Importante! Si se cambia la dirección IP interna del guest, se debe
+  # reconfigurar la opción 'trusted_host_patterns' de Drupal ubicada en el
+  # archivo 'sites/default/settings.php'
   config.vm.network "private_network", ip: "192.168.33.10"
 
 
