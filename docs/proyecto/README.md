@@ -77,7 +77,7 @@ del entorno virtualizado.
 Necesitaría instalar en la VM, como mínimo, PHP, MySQL, Apache y Drupal.
 Instalar otras herramientas como git, curl y algunos módulos para PHP es bienvenido
 también. Buscando en la web he encontrado tutoriales, posts y consejos para instalar
-lo anterior, claro, no todo junto por lo que el [Vagrantfile](../../Vagranfile) y
+lo anterior, claro, no todo junto por lo que el [Vagrantfile](../../Vagrantfile) y
 el [archivo de provisioning](../../scripts/bootstrap.sh) terminan siendo una mezcla refinada de todo.
 
 Debo reconocer que desde que comencé con el desarrollo del proyecto, pasé una
