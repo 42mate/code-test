@@ -92,6 +92,20 @@ proyecto pero todavía no he llegado a probar lo suficiente y entender en detall
 la tecnología como para dedicar minutos/horas *ahora* en ponerlo en práctica. En
 otro momento será.
 
+## JavaScript
+
+No me pareció necesaria llegar a implementar algún tipo de código en JavaScript,
+a pesar de que aparece como opcional en las condiciones del proyecto, principalmente
+porque me interesaba cumplir con los requerimientos base, es decir, poder ver,
+crear, eliminar posts, login, etc. Para todo lo anterior, el mismo Drupal ya
+provee de cierto dinamismo en su UI. Tal vez, si fuese realmente requerido, sería interesante considerar la utilización de frameworks como [React](https://facebook.github.io/react/) o [Angular 2](https://angular.io/) en
+el frontend.
+
+## Diseño responsive
+
+En este aspecto desconocía con lo que me encontraría en cuanto a frontend al utilizar
+Drupal. Para bien, el HTML generado por Drupal muestra un comportamiento *responsive* al ingresar al blog desde un smartphone real o simulando uno mediante Chrome Developers Tools en modo *Responsive*.
+
 ## (Otros) Problemas encontrados
 
 ### Vlad
@@ -149,3 +163,7 @@ decantando por:
 
 En cuanto a credenciales de acceso, traté de seguir las recomendaciones propuestas
 en [The Twelve-Factor App](https://12factor.net/).
+
+---
+
+Este documento es una [Evolving Publication](http://martinfowler.com/bliki/EvolvingPublication.html).
