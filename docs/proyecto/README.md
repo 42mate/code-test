@@ -146,3 +146,6 @@ decantando por:
    servidor web.
 5. Instalar/actualizar dependencias del proyecto.
 4. Volver al paso 3 y repetir.
+
+En cuanto a credenciales de acceso, traté de seguir las recomendaciones propuestas
+en [The Twelve-Factor App](https://12factor.net/).
